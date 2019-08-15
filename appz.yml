@@ -1,0 +1,24 @@
+app:
+  name: Vault
+  code: VAULT
+  notify: appz@cloudbourne.co
+
+build:
+  version: 0.4
+  env: DEV
+  build_file: none
+  output_files: output/*.zip
+  image_template: vault-1.2
+  image_name: myco/vault
+
+deploy:
+  context: myco/DEV
+  replicas: 1
+  port:
+  - 8200
+
+monitor:
+  notify: appzops@cloudbourne.co      
+
+properties:
+  revision : 15
